@@ -6,7 +6,7 @@ WORKDIR /app
 
 ## Step 2:
 # Copy source code to working directory
-copy . hello.py /app/
+copy . cap_hello.py /app/
 
 ## Step 3:
 # Install packages from requirements.txt
@@ -19,5 +19,5 @@ RUN pip install --no-cache-dir --upgrade pip &&\
 EXPOSE 80
 
 ## Step 5:
-# Run app.py at container launch
-CMD ["python", "hello.py"]
+# Run hello.py at container launch
+CMD ["python", "cap_hello.py"]
