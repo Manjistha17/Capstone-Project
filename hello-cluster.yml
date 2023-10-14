@@ -7,19 +7,11 @@ metadata:
 
 iam:
   withOIDC: true
-  serviceRoleARN: arn:aws:iam::904982211203:role/EKSClusterRole
-
+  serviceRoleARN: arn:aws:iam::092465499044:role/EKSClusterRole
+  
 managedNodeGroups:
   - name: ng-1
-    instanceType: t2.small
-    desiredCapacity: 2
+    instanceType: t3.small
+    desiredCapacity: 1
     iam:
-      withAddonPolicies:
-        imageBuilder: true
-
-addons:
-  fsx: 
-    id: fsx-addon
-
-customIAMInstanceProfile:
-  name: EKSWorkerNodeProfile
+      instanceRoleARN: arn:aws:iam::092465499044:instance-profile/EKSWorkerNodeProfile
