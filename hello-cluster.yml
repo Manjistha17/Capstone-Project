@@ -8,6 +8,25 @@ metadata:
 iam:
   withOIDC: true
 
+managedNodeGroups:
+  - name: ng-1
+    instanceType: t2.small
+    desiredCapacity: 2
+    iam:
+      withAddonPolicies:
+        imageBuilder: true  
+
+addons:
+  fsx: 
+    id: fsx-addon
+
+customIAMInstanceProfile:
+  name: EKSWorkerNodeProfile
+
+# Define the worker node role and attach policies
+iam:
+  serviceRoleARN: arn:aws:iam::904982211203:role/EKSClusterRole  
+
 nodeGroups:
   - name: ng-1
     instanceType: t2.small
@@ -18,3 +37,5 @@ nodeGroups:
     ssh:
       allow: true
       publicKeyName: Project5   
+    iam:
+      instanceRoleARN: arn:aws:iam::904982211203:role/EKSWorkerNodeRole  
