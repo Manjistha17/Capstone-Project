@@ -5,6 +5,14 @@
 # app.py should pass pylint
 # (Optional) Build a simple integration test
 
+CLUSTER_NAME=caphello
+REGION_NAME=us-east-1
+KEYPAIR_NAME=project5
+DEPLOYMENT_NAME=hello-cap
+CONTAINER_PORT=80
+HOST_PORT=8080
+KUBECTL=./bin/kubectl
+
 setup:
 	# Create python virtualenv & source it
 	# source ~/.devops/bin/activate
@@ -38,5 +46,36 @@ upload-docker: build-docker
 	./upload_docker.sh
 
 k8s-deployment: eks-create-cluster
-	./k8s_deployment.sh	
-all: install lint test
+		k8s_deployment.sh	
+
+port-forwarding: 
+	# Needed for "minikube" only
+	${KUBECTL} port-forward service/${DEPLOYMENT_NAME} ${HOST_PORT}:${CONTAINER_PORT}
+
+rolling-update:
+	${KUBECTL} get deployments -o wide
+	${KUBECTL} set image deployments/${DEPLOYMENT_NAME} \
+		${DEPLOYMENT_NAME}=${NEW_IMAGE_NAME}
+	echo
+	${KUBECTL} get deployments -o wide
+	${KUBECTL} describe pods | grep -i image
+	${KUBECTL} get pods -o wide
+
+#rollout-status:
+	#${KUBECTL} rollout status deployment ${DEPLOYMENT_NAME}
+	#echo
+	#${KUBECTL} get deployments -o wide
+
+rollback:
+	${KUBECTL} get deployments -o wide
+	${KUBECTL} rollout undo deployment ${DEPLOYMENT_NAME}
+	${KUBECTL} describe pods | grep -i image
+	echo
+	${KUBECTL} get pods -o wide
+	${KUBECTL} get deployments -o wide
+
+k8s-cleanup-resources:
+	k8s_cleanup_resources.sh
+
+eks-create-cluster:
+	eks_create_cluster.sh
