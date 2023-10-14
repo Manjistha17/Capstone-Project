@@ -30,8 +30,8 @@ test:
 
 lint:
 	# This is linter for Dockerfiles
-	hadolint Dockerfile
-	pylint --disable=R,C,W1203,W1202 hello.py
+	hadolint-Linux-x86_64 Dockerfile
+	pylint --disable=R,C,W1203,W1202 cap_hello.py
 
 run-app:
 	python3 cap_hello.py	
