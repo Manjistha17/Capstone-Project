@@ -12,7 +12,7 @@ dockerpath="manjistha/project5"
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
 docker login &&\
-    docker image tag project5 $dockerpath
+    docker image tag cap_hello.1.000 $dockerpath
 
 # Step 3:
 # Push image to a docker repository
