@@ -31,7 +31,7 @@ workflows:
   default:
     jobs:
       - build       
-      - docker/publish:
+      - docker-publish:
           matrix:
             parameters:
               image: [manjistha/project5]
