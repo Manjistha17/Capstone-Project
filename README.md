@@ -1,5 +1,4 @@
 # Capstone-Project
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Manjistha17/Capstone-Project/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Manjistha17/Capstone-Project/tree/main)
 
 **Project Overview**
 This capstone project showcases the use of CI/CD tools and cloud services covered in the program Udacity - AWS Cloud DevOps Engineer.
@@ -47,9 +46,13 @@ Git repo: https://github.com/Manjistha17/Capstone-Project
 
 Screenshots:
 Application screenshot.png : Screenshot showing that the application can be accessed after deployment. 
+
 CircleCi screenshot.png : Screenshot of the Circle CI pipeline showing all stages passed successfully.
+
 Deployment screenshot.png : Screenshot of the kubectl command output showing that the deployment is successful, pods are running, and the service can be accessed via an external IP or port forwarding.
+
 EC2 screenshot.png: Screenshot of AWS EC2 page showing the instances running as the EKS cluster nodes.
+
 Lint screenshot.png: Code is checked against a linter as part of a Continuous Integration step.
 
 
