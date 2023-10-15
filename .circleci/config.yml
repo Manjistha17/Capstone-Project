@@ -26,7 +26,7 @@ jobs:
           command: |
             curl -Lo hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
             chmod +x hadolint
-            sudo mv hadolint /usr/local/bin/
+            mv hadolint /usr/local/bin/
     
       - run:
           name: Run lint
