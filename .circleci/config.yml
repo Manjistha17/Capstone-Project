@@ -24,7 +24,7 @@ jobs:
           name: Run lint
           command: |
             . .venv/bin/activate
-            make lint
+            hadolint Dockerfile
 
   docker-publish:
     docker:
