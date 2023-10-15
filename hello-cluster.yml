@@ -14,4 +14,4 @@ managedNodeGroups:
     instanceType: t3.small
     desiredCapacity: 1
     iam:
-      instanceRoleARN: arn:aws:iam::904982211203:instance-profile/myEKSWorkerNodeProfile
+      instanceRoleARN: arn:aws:iam::904982211203:role/myEKSWorkerNodeRole
