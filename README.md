@@ -35,11 +35,15 @@ The project tasks are managed through a Makefile that utilizes shell scripts.
 The **CirclCI pipeline**(config.yml) executes the following steps automatically:
 
 make setup
+
 make install
+
 make lint
+
 Build and publish the container image
 
 Dockerhub repo: https://hub.docker.com/repository/docker/manjistha/project5/general
+
 Git repo: https://github.com/Manjistha17/Capstone-Project
 
 
