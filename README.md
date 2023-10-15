@@ -41,6 +41,8 @@ The **CirclCI pipeline**(config.yml) executes the following steps automatically:
 
 4.Build and publish the container image
 
+Environment variables added to CircleCI : DOCKER_USERNAME, DOCKER_PASSWORD
+
 Dockerhub repo: https://hub.docker.com/repository/docker/manjistha/project5/general
 
 Git repo: https://github.com/Manjistha17/Capstone-Project
