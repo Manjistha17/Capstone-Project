@@ -1,4 +1,4 @@
-version : 1
+version : 2.1
 
 jobs:
   build:
@@ -31,3 +31,13 @@ workflows:
   default:
     jobs:
       - build       
+      - docker/publish:
+          matrix:
+            parameters:
+              image: [manjistha/project5]
+              path: [project5]
+              docker-context: [project5]
+              deploy: [true]
+              tag: ['$(<project5/00003)', 'latest']
+              update-description: [true]    
+          requires: [init]
