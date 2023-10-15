@@ -40,7 +40,7 @@ run-docker: build-docker
 upload-docker: build-docker
 	./upload_docker.sh
 
-deployment: create-cluster
+deployment: deployment
 	./deployment.sh	
 
 
