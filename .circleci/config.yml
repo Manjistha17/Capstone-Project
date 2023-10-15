@@ -38,8 +38,9 @@ jobs:
           name: Publish Docker Image
           command: |
             docker build -t manjistha/project5:latest -f Dockerfile .
-            echo "M@njistha92" | docker login -u "manjistha" --password-stdin
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
             docker push manjistha/project5:latest
+
 
 workflows:
   version: 2
