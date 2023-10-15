@@ -25,7 +25,8 @@ jobs:
           command: |
             . .venv/bin/activate
             curl -Lo hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
-            chmod +x hadolint         
+            chmod +x hadolint  
+            mv hadolint hadolint-Linux-x86_64       
             make lint
 
   docker-publish:
