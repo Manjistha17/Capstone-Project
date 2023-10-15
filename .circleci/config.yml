@@ -24,6 +24,8 @@ jobs:
           name: Run lint
           command: |
             . .venv/bin/activate
+            curl -Lo hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+            chmod +x hadolint         
             hadolint Dockerfile
 
   docker-publish:
