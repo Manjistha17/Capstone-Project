@@ -33,13 +33,13 @@ The project tasks are managed through a Makefile that utilizes shell scripts.
 
 The **CirclCI pipeline**(config.yml) executes the following steps automatically:
 
-make setup
+1.make setup
 
-make install
+2.make install
 
-make lint
+3.make lint
 
-Build and publish the container image
+4.Build and publish the container image
 
 Dockerhub repo: https://hub.docker.com/repository/docker/manjistha/project5/general
 
