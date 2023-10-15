@@ -20,11 +20,11 @@ jobs:
           paths:
             - .venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
-      # - run:
-      #     name: Run lint
-      #     command: |
-      #       . .venv/bin/activate
-      #       make lint
+      - run:
+          name: Run lint
+          command: |
+            . .venv/bin/activate
+            make lint
 
   docker-publish:
     docker:
