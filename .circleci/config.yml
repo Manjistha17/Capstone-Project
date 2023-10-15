@@ -20,14 +20,19 @@ jobs:
           paths:
             - .venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
+
+      - run:
+          name: Install hadolint
+          command: |
+            curl -Lo hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+            chmod +x hadolint
+            sudo mv hadolint /usr/local/bin/
+    
       - run:
           name: Run lint
           command: |
-            . .venv/bin/activate
-            curl -Lo hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
-            chmod +x hadolint  
-            mv hadolint hadolint-Linux-x86_64       
-            make lint
+            . .venv/bin/activate    
+            /usr/local/bin/hadolint Dockerfile
 
   docker-publish:
     docker:
