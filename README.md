@@ -40,7 +40,8 @@ make lint
 Build and publish the container image
 
 Dockerhub repo: https://hub.docker.com/repository/docker/manjistha/project5/general
-Git repo:
+Git repo: https://github.com/Manjistha17/Capstone-Project
+
 
 
 
